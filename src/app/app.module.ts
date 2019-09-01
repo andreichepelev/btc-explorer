@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlockHistoryComponent } from './block-history/block-history.component';
 import { AddressComponent } from './address/address.component';
+import { ExplorerService } from './explorer.service';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { AddressComponent } from './address/address.component';
     HeaderComponent,
     FooterComponent,
     BlockHistoryComponent,
-    AddressComponent
+    AddressComponent,
+    NotfoundComponent
   ],
+
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ExplorerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

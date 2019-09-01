@@ -5,12 +5,14 @@ import { TransactionDetailsComponent } from './transaction-details/transaction-d
 import { BlockSummaryComponent } from './block-summary/block-summary.component';
 import { BlockHistoryComponent } from './block-history/block-history.component';
 import { AddressComponent } from './address/address.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', component: BlockHistoryComponent },
   { path: 'blocks', component: BlockSummaryComponent},
-  { path: 'transactions', component: TransactionDetailsComponent },
-  { path: 'addresses', component: AddressComponent }
+  { path: 'transactions/:hash', component: TransactionDetailsComponent },
+  { path: 'addresses', component: AddressComponent },
+  { path: '**', component: NotfoundComponent }
 ];
 
 @NgModule({
