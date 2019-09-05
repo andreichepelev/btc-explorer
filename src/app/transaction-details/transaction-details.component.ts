@@ -14,18 +14,22 @@ export class TransactionDetailsComponent implements OnInit {
 
   // exService: ExplorerService;
   // activatedRoute: ActivatedRoute;
-  hash = 'xyz';
+  hash = '';
   timeStamp: number;
   subscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {
-    // this.activatedRoute = activatedRoute;
+    // debugger
+    this.hash = this.activatedRoute.snapshot.params.hash;
     // this.exService = exService;
    }
 
   ngOnInit() {
+    // debugger
     // this.hash = this.activatedRoute.snapshot.params.hash;
-    this.subscription = this.exService.fetchTime(this.hash).subscribe((x) => {this.timeStamp = x});
+    this.subscription = this.exService.
+      fetchTime(this.hash)
+      .subscribe((x) => {this.timeStamp = x});
   }
 
 }
