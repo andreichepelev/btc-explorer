@@ -6,11 +6,11 @@
         <tbody>
           <tr>
             <th scope="row">Identifier</th>
-            <td>1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</td>
+            <td class="is-overflow-ellipsis">{{ address?.address }}</td>
           </tr>
           <tr>
             <th scope="row">Balance</th>
-            <td>34.12839</td>
+            <td>{{ address?.balance/100000000 }} BTC</td>
           </tr>
         </tbody>
         </table>
@@ -18,16 +18,16 @@
         <table class="table table-hover">
           <tbody>
             <tr>
-              <th scope="row">Sent</th>
-              <td>23.23434</td>
+              <th scope="row">Total received</th>
+              <td>{{ address?.totalReceived/100000000 }} BTC</td>
             </tr>
             <tr>
-              <th scope="row">Received</th>
-              <td>45.23345</td>
+              <th scope="row">Total sent</th>
+              <td>{{ address?.totalSent/100000000 }} BTC</td>
             </tr>
             <tr>
               <th scope="row">Transactions</th>
-              <td>118</td>
+              <td>{{ address?.txs }}</td>
             </tr>
           </tbody>
         </table>
@@ -47,22 +47,22 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>

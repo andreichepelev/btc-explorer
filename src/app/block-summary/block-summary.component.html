@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>Block #59034</h1>
+        <h1>Block #{{ block.height }}</h1>
         <table class="table table-borderless" style="background-color: rgb(241, 241, 241);">
         <tbody>
           <tr>
             <th scope="row">Hash</th>
-            <td class="d-inline-block text-truncate" style="max-width: 380px">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</td>
+            <td class="is-overflow-ellipsis">{{ block?.hash }}</td>
           </tr>
           <tr>
             <th scope="row">Mined</th>
-            <td class="d-inline-block text-truncate">Sun, 18 Aug 2019 08:49:03 UTC</td>
+            <td class="is-overflow-ellipsis"> {{ block?.time*1000 | date:'long' }} </td>
           </tr>
         </tbody>
         </table>
@@ -23,20 +23,20 @@
         <table class="table table-hover">
             <tbody>
               <tr>
-                <th scope="row" class="col-md-6 text">Transactions</th>
-                <td class="col-md-6" style="text-align:right">1456</td>
+                <th scope="row" class="col-md-6">Height</th>
+                <td class="col-md-6" style="text-align:right">{{ block?.height }}</td>
               </tr>
               <tr>
-                <th scope="row" class="col-md-6">Height</th>
-                <td class="col-md-6" style="text-align:right">559004</td>
+                <th scope="row" class="col-md-6 text">Transactions</th>
+                <td class="col-md-6" style="text-align:right">{{ block?.txCount }}</td>
               </tr>
               <tr>
                 <th scope="row" class="col-md-6">Confirmations</th>
-                <td class="col-md-6" style="text-align:right">8</td>
+                <td class="col-md-6" style="text-align:right">{{ block?.confirmations }}</td>
               </tr>
               <tr>
                 <th scope="row" class="col-md-6">Size</th>
-                <td class="col-md-6" style="text-align:right">22342</td>
+                <td class="col-md-6" style="text-align:right">{{ block?.size }}</td>
               </tr>
             </tbody>
           </table>
@@ -46,19 +46,19 @@
           <tbody>
             <tr>
               <th scope="row" class="col-md-6">Version</th>
-              <td class="col-md-6" style="text-align:right">1456</td>
+              <td class="col-md-6" style="text-align:right">{{ block?.version }}</td>
             </tr>
             <tr>
               <th scope="row" class="col-md-6">Nonce</th>
-              <td class="col-md-6" style="text-align:right">559004</td>
+              <td class="col-md-6" style="text-align:right">{{ block?.nonce }}</td>
             </tr>
             <tr>
               <th scope="row" class="col-md-6">Bits</th>
-              <td class="col-md-6" style="text-align:right">8</td>
+              <td class="col-md-6" style="text-align:right">{{ block?.bits }}</td>
             </tr>
             <tr>
               <th scope="row" class="col-md-6">Difficulty</th>
-              <td class="col-md-6" style="text-align:right">20992342</td>
+              <td class="col-md-6" style="text-align:right">{{ block?.difficulty }}</td>
             </tr>
           </tbody>
         </table>
@@ -70,7 +70,7 @@
             <tbody>
               <tr>
                 <th scope="row">Merke root</th>
-                <td>0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</td>
+                <td class="is-overflow-ellipsis">{{ block?.merkleRoot }}</td>
               </tr>
             </tbody>
         </table>
@@ -90,25 +90,25 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><a href="/transactions/">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions/">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>12</td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>12</td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>12</td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>
                 </tr>
                 <tr>
-                  <td><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
                   <td>12</td>
                   <td>0.3345879345</td>
                   <td>0.0018793425</td>

@@ -9,9 +9,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', component: BlockHistoryComponent },
-  { path: 'blocks', component: BlockSummaryComponent},
+  { path: 'blocks/:blockheight', component: BlockSummaryComponent},
   { path: 'transactions/:hash', component: TransactionDetailsComponent },
-  { path: 'addresses', component: AddressComponent },
+  { path: 'addresses/:identifier', component: AddressComponent },
   { path: '**', component: NotfoundComponent }
 ];
 

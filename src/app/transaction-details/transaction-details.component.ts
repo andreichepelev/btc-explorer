@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExplorerService } from '../explorer.service';
 import { Subscription } from 'rxjs';
+import { Tx } from '../types';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class TransactionDetailsComponent implements OnInit {
   // exService: ExplorerService;
   // activatedRoute: ActivatedRoute;
   hash = '';
-  timeStamp: number;
+  tx: Tx;
   subscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {
@@ -27,9 +28,10 @@ export class TransactionDetailsComponent implements OnInit {
   ngOnInit() {
     // debugger
     // this.hash = this.activatedRoute.snapshot.params.hash;
-    this.subscription = this.exService.
-      fetchTime(this.hash)
-      .subscribe((x) => {this.timeStamp = x});
+    this.subscription = this.exService.fetchTx(this.hash)
+      .subscribe((x) => {
+        this.tx = x;
+      });
   }
 
 }

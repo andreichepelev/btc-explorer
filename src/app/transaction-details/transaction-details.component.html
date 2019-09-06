@@ -6,11 +6,11 @@
       <tbody>
         <tr>
           <th scope="row">Hash</th>
-          <td>{{ hash }}</td>
+          <td class="is-overflow-ellipsis">{{ hash }}</td>
         </tr>
         <tr>
           <th scope="row">Mined</th>
-          <td>{{ timeStamp }}</td>
+          <td>{{ tx?.blockTime*1000 | date:'long' }}</td>
         </tr>
       </tbody>
       </table>
@@ -19,23 +19,23 @@
         <tbody>
           <tr>
             <th scope="row">Block hash</th>
-            <td><a href="/blocks">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
+            <td class="is-overflow-ellipsis"><a href="/blocks"> {{ tx?.blockHash }} </a></td>
           </tr>
           <tr>
             <th scope="row">Block height</th>
-            <td>559004</td>
+            <td>{{ tx?.blockHeight }}</td>
           </tr>
           <tr>
             <th scope="row">Confirmations</th>
-            <td>8</td>
+            <td>{{ tx?.confirmations }}</td>
           </tr>
           <tr>
             <th scope="row">Total Output</th>
-            <td>0.3345879345</td>
+            <td>{{ tx?.value/100000000 }} BTC</td>
           </tr>
           <tr>
             <th scope="row">Fees</th>
-            <td>0.0005879345</td>
+            <td>{{ tx?.fees }}</td>
           </tr>
         </tbody>
       </table>
@@ -53,11 +53,11 @@
         <table class="table table-hover" style="background-color: #ffffff;">
             <tbody>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.3495809</td>
               </tr>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.1295834</td>
               </tr>
             </tbody>
@@ -68,19 +68,19 @@
         <table class="table table-hover" style="background-color: #ffffff;">
             <tbody>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.3495809</td>
               </tr>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.1295834</td>
               </tr>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.3495809</td>
               </tr>
               <tr>
-                <td><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
+                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
                 <td>0.1295834</td>
                 </tr>
             </tbody>
