@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExplorerService } from '../explorer.service';
 import { Subscription } from 'rxjs';
-import { Tx } from '../types';
+import { Tx, Vin, Vout } from '../types';
 
 
 @Component({
@@ -17,6 +17,8 @@ export class TransactionDetailsComponent implements OnInit {
   // activatedRoute: ActivatedRoute;
   hash = '';
   tx: Tx;
+  vin: Vin;
+  vout: Vout;
   subscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {

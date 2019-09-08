@@ -19,11 +19,11 @@
         <tbody>
           <tr>
             <th scope="row">Block hash</th>
-            <td class="is-overflow-ellipsis"><a href="/blocks"> {{ tx?.blockHash }} </a></td>
+            <td class="is-overflow-ellipsis">{{ tx?.blockHash }}</td>
           </tr>
           <tr>
             <th scope="row">Block height</th>
-            <td>{{ tx?.blockHeight }}</td>
+            <td><a href="/blocks/{{ tx?.blockHeight }}" target="_blank">{{ tx?.blockHeight }}</a></td>
           </tr>
           <tr>
             <th scope="row">Confirmations</th>
@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <th scope="row">Fees</th>
-            <td>{{ tx?.fees }}</td>
+            <td>{{ tx?.fees/100000 }}</td>
           </tr>
         </tbody>
       </table>
@@ -52,13 +52,9 @@
         <h4>Input</h4>
         <table class="table table-hover" style="background-color: #ffffff;">
             <tbody>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.3495809</td>
-              </tr>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.1295834</td>
+              <tr *ngFor="let vin of tx?.vin">
+                <td class="is-overflow-ellipsis" style="width: 70%"><a href="/addresses/{{ vin?.addresses }}" target="_blank">{{ vin?.addresses }}</a></td>
+                <td>{{ vin?.value/100000000 }} BTC</td>
               </tr>
             </tbody>
           </table>
@@ -67,22 +63,10 @@
         <h4>Output</h4>
         <table class="table table-hover" style="background-color: #ffffff;">
             <tbody>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.3495809</td>
+              <tr *ngFor="let vout of tx?.vout">
+                <td class="is-overflow-ellipsis" style="width: 80%"><a href="/addresses/{{ vout?.addresses }}" target="_blank">{{ vout?.addresses }}</a></td>
+                <td>{{ vout?.value/100000000 }}</td>
               </tr>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.1295834</td>
-              </tr>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.3495809</td>
-              </tr>
-              <tr>
-                <td class="is-overflow-ellipsis"><a href="/addresses">1MEz8x9kCRjmrjpzwQXCb5FoBwyW7429Gs</a></td>
-                <td>0.1295834</td>
-                </tr>
             </tbody>
           </table>
       </div>

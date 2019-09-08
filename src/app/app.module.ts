@@ -12,6 +12,8 @@ import { BlockHistoryComponent } from './block-history/block-history.component';
 import { AddressComponent } from './address/address.component';
 import { ExplorerService } from './explorer.service';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
     FooterComponent,
     BlockHistoryComponent,
     AddressComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HomepageComponent
   ],
 
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [ExplorerService],
   bootstrap: [AppComponent]

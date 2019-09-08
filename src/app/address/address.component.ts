@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExplorerService } from '../explorer.service';
 import { Subscription } from 'rxjs';
-import { Address } from '../types';
+import { Address, Tx } from '../types';
 
 
 @Component({
@@ -14,6 +14,8 @@ export class AddressComponent implements OnInit {
 
 identifier: string;
 address: Address;
+tx: Tx;
+txids: Array<string>;
 subscription: Subscription;
 
 constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {
@@ -25,5 +27,6 @@ ngOnInit() {
   .subscribe((x) => {
     this.address = x;
   });
+  this.txids = this.address.txids;
 }
 }

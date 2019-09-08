@@ -15,8 +15,8 @@ export type Tx = {
 
 export type Vin = {
   n: number;
-  isAddress: boolean;
-  coinbase: string;
+  addresses: Array<string>;
+  value: string;
 };
 
 export type Vout = {
@@ -24,7 +24,7 @@ export type Vout = {
   n: number;
   spent?: boolean;
   hex: string;
-  addresses: string[];
+  addresses: Array<string>;
   isAddress: boolean;
 };
 
@@ -59,5 +59,9 @@ export type Address = {
   unconfirmedBalance: string;
   unconfirmedTxs: number;
   txs: number;
-  txids: string[];
-}
+  txids: Array<string>;
+};
+
+export type Btcprice = {
+
+};

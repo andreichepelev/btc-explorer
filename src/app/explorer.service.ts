@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tx, Block, Address } from './types';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,8 @@ export class ExplorerService {
 
     // http://142.93.172.157:9000/blockbook/btc/main/v2/address/1CK6KHY6MHgYvmRQ4PAafKYDrg1ejbH1cE
     return this.http.get<Address>(`http://142.93.172.157:9000/blockbook/btc/main/v2/address/${identifier}`);
+  }
+  fetchBtcPrice(): Observable<object> {
+    return this.http.get('https://blockchain.info/ticker');
   }
 }

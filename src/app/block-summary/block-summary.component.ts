@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExplorerService } from '../explorer.service';
 import { Subscription } from 'rxjs';
-import { Block } from '../types';
+import { Block, Tx } from '../types';
 
 @Component({
   selector: 'app-block-summary',
@@ -14,6 +14,7 @@ export class BlockSummaryComponent implements OnInit {
   blockheight: number;
   block: Block;
   subscription: Subscription;
+  tx: Tx;
 
   constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {
     this.blockheight = this.activatedRoute.snapshot.params.blockheight;
@@ -24,6 +25,5 @@ export class BlockSummaryComponent implements OnInit {
     .subscribe((x) => {
       this.block = x;
     });
+    }
   }
-
-}

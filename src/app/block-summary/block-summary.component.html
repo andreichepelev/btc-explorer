@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1>Block #{{ block.height }}</h1>
+        <h1>Block #{{ block?.height }}</h1>
         <table class="table table-borderless" style="background-color: rgb(241, 241, 241);">
         <tbody>
           <tr>
@@ -70,64 +70,41 @@
             <tbody>
               <tr>
                 <th scope="row">Merke root</th>
-                <td class="is-overflow-ellipsis">{{ block?.merkleRoot }}</td>
+                <td class="is-overflow-ellipsis" style="width:80%">{{ block?.merkleRoot }}</td>
               </tr>
             </tbody>
         </table>
       </div>
     </div>
+
+
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
           <h2>Transactions</h2>
           <table class="table table-hover">
               <thead>
                 <tr>
                   <th scope="col">Hash</th>
-                  <th scope="col">Confirmations</th>
+                  <th scope="col">Input</th>
                   <th scope="col">Output</th>
                   <th scope="col">Fees</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="is-overflow-ellipsis"><a href="/transactions/">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
-                  <td>12</td>
-                  <td>0.3345879345</td>
-                  <td>0.0018793425</td>
-                </tr>
-                <tr>
-                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
-                  <td>12</td>
-                  <td>0.3345879345</td>
-                  <td>0.0018793425</td>
-                </tr>
-                <tr>
-                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
-                  <td>12</td>
-                  <td>0.3345879345</td>
-                  <td>0.0018793425</td>
-                </tr>
-                <tr>
-                  <td class="is-overflow-ellipsis"><a href="/transactions">0000000000000000000795b009fa0dcf1e77b20e7f5ff122d89556c302db560d</a></td>
-                  <td>12</td>
-                  <td>0.3345879345</td>
-                  <td>0.0018793425</td>
+                <tr *ngFor="let tx of block?.txs | paginate: { itemsPerPage: 15, currentPage: p }; let i=index">
+                  <td class="is-overflow-ellipsis"><a href="/transactions/{{ tx?.txid }}" target="_blank">{{ tx?.txid }}</a></td>
+                  <td>{{ tx?.valueIn/100000000 }}</td>
+                  <td>{{ tx?.value/100000000 }}</td>
+                  <td>{{ tx?.fees/100000000 }}</td>
                 </tr>
               </tbody>
           </table>
-          <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
-        </div>
       </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div align="center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>

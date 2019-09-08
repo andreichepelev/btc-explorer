@@ -6,9 +6,10 @@ import { BlockSummaryComponent } from './block-summary/block-summary.component';
 import { BlockHistoryComponent } from './block-history/block-history.component';
 import { AddressComponent } from './address/address.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
-  { path: '', component: BlockHistoryComponent },
+  { path: '', component: HomepageComponent },
   { path: 'blocks/:blockheight', component: BlockSummaryComponent},
   { path: 'transactions/:hash', component: TransactionDetailsComponent },
   { path: 'addresses/:identifier', component: AddressComponent },
