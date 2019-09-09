@@ -29,7 +29,24 @@ export class ExplorerService {
     // http://142.93.172.157:9000/blockbook/btc/main/v2/address/1CK6KHY6MHgYvmRQ4PAafKYDrg1ejbH1cE
     return this.http.get<Address>(`http://142.93.172.157:9000/blockbook/btc/main/v2/address/${identifier}`);
   }
-  fetchBtcPrice(): Observable<object> {
-    return this.http.get('https://blockchain.info/ticker');
+  fetchBtcUsdPrice(): Observable<object> {
+    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/USD?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+  }
+
+  fetchBtcEthPrice(): Observable<object> {
+    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/ETH?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+  }
+
+  fetchBtcPmaPrice(): Observable<object> {
+    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/PMA?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+  }
+
+  fetchGeneral(): Observable<object> {
+    return this.http.get<object>('http://142.93.172.157:9000/blockbook/btc/main/v2').pipe(
+      map((response: any) => {
+        const blockbook = response.blockbook;
+        return blockbook;
+      })
+    );
   }
 }

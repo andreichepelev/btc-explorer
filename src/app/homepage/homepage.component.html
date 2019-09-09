@@ -2,7 +2,51 @@
     <div class="row">
       <div class="col-md-8">
         <h2>Welcome to PumaPay Bitcoin Block Explorer</h2>
-          {{ Btcprice }}
+        <br />
+        <p>This service, powered by BlockBook API, allows you to monitor Bitcoin blockchain and retrieve data per each mined block, executed transaction or address.</p>
+        <br />
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th scope="row">Current Bitcoin price</th>
+              <td>{{ btcusdprice?.rate | number }} USD</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>{{ btcethprice?.rate | number }} ETH</td>
+              </tr>
+            <tr>
+               <tr>
+                  <th scope="row"></th>
+                  <td>{{ btcpmaprice?.rate | number }} PMA</td>
+               </tr>
+            <tr>
+            <tr>
+              <th scope="row">Last price update</th>
+              <td>{{ btcusdprice?.time | date:'long' }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Price source</th>
+              <td><a href="https://coinapi.io">CoinAPI</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Latest mined block</th>
+              <td><a href="/blocks/{{ general?.bestHeight }}" target="_blank">{{ general?.bestHeight }}</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Last block update</th>
+              <td>{{ general?.lastBlockTime | date:'long' }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Host</th>
+              <td>{{ general?.host }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Blockbook version</th>
+              <td>{{ general?.version }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
