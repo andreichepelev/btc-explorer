@@ -14,6 +14,8 @@ import { ExplorerService } from './explorer.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HomepageComponent } from './homepage/homepage.component';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [ExplorerService],
   bootstrap: [AppComponent]

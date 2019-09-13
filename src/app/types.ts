@@ -17,6 +17,7 @@ export type Vin = {
   n: number;
   addresses: Array<string>;
   value: string;
+  isAddress: boolean;
 };
 
 export type Vout = {
