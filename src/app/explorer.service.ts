@@ -15,6 +15,7 @@ export class ExplorerService {
   fetchTx(hash: string): Observable<Tx> {
 
     // http://142.93.172.157:9000/blockbook/btc/main/tx/98f00400d8ec2a4704778efbf905aa8b211c28ca183fc948644d4bd9aa967fb5
+    // https://btc1.trezor.io/api/v2/block/596507
     return this.http.get<Tx>(`http://142.93.172.157:9000/blockbook/btc/main/v2/tx/${hash}`);
   }
 

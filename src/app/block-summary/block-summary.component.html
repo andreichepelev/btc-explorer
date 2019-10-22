@@ -23,20 +23,20 @@
         <table class="table table-hover">
             <tbody>
               <tr>
-                <th scope="row" class="col-md-6">Height</th>
-                <td class="col-md-6" style="text-align:right">{{ block?.height }}</td>
+                <th scope="row">Height</th>
+                <td class="is-overflow-ellipsis">{{ block?.height }}</td>
               </tr>
               <tr>
-                <th scope="row" class="col-md-6 text">Transactions</th>
-                <td class="col-md-6" style="text-align:right">{{ block?.txCount }}</td>
+                <th scope="row">Transactions</th>
+                <td class="is-overflow-ellipsis">{{ block?.txCount }}</td>
               </tr>
               <tr>
-                <th scope="row" class="col-md-6">Confirmations</th>
-                <td class="col-md-6" style="text-align:right">{{ block?.confirmations }}</td>
+                <th scope="row">Confirmations</th>
+                <td class="is-overflow-ellipsis">{{ block?.confirmations }}</td>
               </tr>
               <tr>
-                <th scope="row" class="col-md-6">Size</th>
-                <td class="col-md-6" style="text-align:right">{{ block?.size }}</td>
+                <th scope="row">Size</th>
+                <td class="is-overflow-ellipsis">{{ block?.size }}</td>
               </tr>
             </tbody>
           </table>
@@ -45,20 +45,20 @@
         <table class="table table-hover">
           <tbody>
             <tr>
-              <th scope="row" class="col-md-6">Version</th>
-              <td class="col-md-6" style="text-align:right">{{ block?.version }}</td>
+              <th scope="row">Version</th>
+              <td class="is-overflow-ellipsis">{{ block?.version }}</td>
             </tr>
             <tr>
-              <th scope="row" class="col-md-6">Nonce</th>
-              <td class="col-md-6" style="text-align:right">{{ block?.nonce }}</td>
+              <th scope="row">Nonce</th>
+              <td class="is-overflow-ellipsis">{{ block?.nonce }}</td>
             </tr>
             <tr>
-              <th scope="row" class="col-md-6">Bits</th>
-              <td class="col-md-6" style="text-align:right">{{ block?.bits }}</td>
+              <th scope="row">Bits</th>
+              <td class="is-overflow-ellipsis">{{ block?.bits }}</td>
             </tr>
             <tr>
-              <th scope="row" class="col-md-6">Difficulty</th>
-              <td class="col-md-6" style="text-align:right">{{ block?.difficulty }}</td>
+              <th scope="row">Difficulty</th>
+              <td class="is-overflow-ellipsis">{{ block?.difficulty }}</td>
             </tr>
           </tbody>
         </table>
@@ -91,9 +91,9 @@
               <tbody>
                 <tr *ngFor="let tx of block?.txs | paginate: { itemsPerPage: 15, currentPage: p }; let i=index">
                   <td class="is-overflow-ellipsis"><a href="/transactions/{{ tx?.txid }}" target="_blank">{{ tx?.txid }}</a></td>
-                  <td>{{ tx?.valueIn/100000000 }}</td>
-                  <td>{{ tx?.value/100000000 }}</td>
-                  <td>{{ tx?.fees/100000000 }}</td>
+                  <td class="is-overflow-ellipsis">{{ tx?.valueIn/100000000 }}</td>
+                  <td class="is-overflow-ellipsis">{{ tx?.value/100000000 }}</td>
+                  <td class="is-overflow-ellipsis">{{ tx?.fees/100000000 }}</td>
                 </tr>
               </tbody>
           </table>
