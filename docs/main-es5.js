@@ -302,6 +302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
 /* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
 
 
 
@@ -342,7 +344,7 @@ var AppModule = /** @class */ (function () {
                 ngx_pagination__WEBPACK_IMPORTED_MODULE_14__["NgxPaginationModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"]
             ],
-            providers: [_explorer_service__WEBPACK_IMPORTED_MODULE_12__["ExplorerService"]],
+            providers: [_explorer_service__WEBPACK_IMPORTED_MODULE_12__["ExplorerService"], { provide: _angular_common__WEBPACK_IMPORTED_MODULE_17__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_17__["HashLocationStrategy"] }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);

@@ -15,6 +15,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HomepageComponent } from './homepage/homepage.component';
 import {FormsModule} from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {FormsModule} from '@angular/forms';
     NgxPaginationModule,
     FormsModule
   ],
-  providers: [ExplorerService],
+  providers: [ExplorerService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
