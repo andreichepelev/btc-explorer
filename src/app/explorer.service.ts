@@ -30,15 +30,15 @@ export class ExplorerService {
     return this.http.get<Address>(`http://142.93.172.157:9000/blockbook/btc/main/v2/address/${identifier}`);
   }
   fetchBtcUsdPrice(): Observable<object> {
-    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/USD?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+    return this.http.get<object>('https://rest.coinapi.io/v1/exchangerate/BTC/USD?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
   }
 
   fetchBtcEthPrice(): Observable<object> {
-    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/ETH?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+    return this.http.get<object>('https://rest.coinapi.io/v1/exchangerate/BTC/ETH?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
   }
 
   fetchBtcPmaPrice(): Observable<object> {
-    return this.http.get<object>('https://rest-sandbox.coinapi.io/v1/exchangerate/BTC/PMA?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
+    return this.http.get<object>('https://rest.coinapi.io/v1/exchangerate/BTC/PMA?apikey=6BEBC0FD-FCC0-4E1E-8E54-200BCCD66672');
   }
 
   fetchGeneral(): Observable<object> {
