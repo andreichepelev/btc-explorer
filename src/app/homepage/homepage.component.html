@@ -28,7 +28,7 @@
         <tr>
           <th scope="row">Latest mined blocks</th>
           <td>
-            <a [routerLink]="['/blocks', general?.bestHeight]" target="_blank">
+            <a [routerLink]="['/blocks', general?.bestHeight]">
               {{general?.bestHeight}}
             </a>
             <a [routerLink]="['/blocks', general?.bestHeight - 1]" target="_blank">
