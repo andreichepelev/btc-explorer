@@ -45,7 +45,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let tx of address?.txids | paginate: { itemsPerPage: 5, currentPage: p }; let i=index">
-                  <td class="is-overflow-ellipsis"><a [routerLink]="['/transactions/', tx]" target="_blank">{{ tx }}</a></td>
+                  <td class="is-overflow-ellipsis"><a [routerLink]="['/transactions/', tx]">{{ tx }}</a></td>
                 </tr>
               </tbody>
           </table>

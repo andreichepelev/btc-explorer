@@ -23,7 +23,7 @@
           </tr>
           <tr>
             <th scope="row">Block height</th>
-            <td><a [routerLink]="['/blocks/', tx?.blockHeight]" target="_blank">{{ tx?.blockHeight }}</a></td>
+            <td><a [routerLink]="['/blocks/', tx?.blockHeight]">{{ tx?.blockHeight }}</a></td>
           </tr>
           <tr>
             <th scope="row">Confirmations</th>
@@ -54,7 +54,7 @@
             <tbody>
               <tr *ngFor="let vin of tx?.vin">
                 <td class="is-overflow-ellipsis" style="width: 70%">
-                  <a *ngIf="vin.isAddress" [routerLink]="['/addresses/', vin?.addresses[0]]" target="_blank">{{ vin?.addresses }}</a>
+                  <a *ngIf="vin.isAddress" [routerLink]="['/addresses/', vin?.addresses[0]]">{{ vin?.addresses }}</a>
                   <span *ngIf="!vin.isAddress"></span>
                 </td>
                 <td align="right">
@@ -71,7 +71,7 @@
             <tbody>
               <tr *ngFor="let vout of tx?.vout">
                 <td class="is-overflow-ellipsis" style="width: 80%">
-                  <a *ngIf="vout.isAddress" [routerLink]="['/addresses/', vout?.addresses[0]]" target="_blank">{{ vout?.addresses }}</a>
+                  <a *ngIf="vout.isAddress" [routerLink]="['/addresses/', vout?.addresses[0]]">{{ vout?.addresses }}</a>
                   <span *ngIf="!vout.isAddress"> {{ vout?.addresses }} </span>
                 </td>
                 <td>{{ vout?.value/100000000 }}</td>
