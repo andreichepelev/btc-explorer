@@ -93,7 +93,7 @@
                   <td class="is-overflow-ellipsis"><a [routerLink]="['/transactions/', tx?.txid]">{{ tx?.txid }}</a></td>
                   <td>{{ tx?.valueIn/100000000 }}</td>
                   <td>{{ tx?.value/100000000 }}</td>
-                  <td>{{ tx?.fees/100000000 }}</td>
+                  <td class="is-overflow-ellipsis">{{ tx?.fees/100000000 }}</td>
                 </tr>
               </tbody>
           </table>
