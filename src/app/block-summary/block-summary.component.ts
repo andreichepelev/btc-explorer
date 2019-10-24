@@ -18,12 +18,12 @@ export class BlockSummaryComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private exService: ExplorerService) {
     this.blockheight = this.activatedRoute.snapshot.params.blockheight;
-   }
+  }
 
   ngOnInit() {
     this.subscription = this.exService.fetchBlock(this.blockheight)
-    .subscribe((x) => {
-      this.block = x;
-    });
-    }
+      .subscribe((x) => {
+        this.block = x;
+      });
   }
+}
