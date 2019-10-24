@@ -10,42 +10,37 @@
         <tbody>
         <tr>
           <th scope="row">Current Bitcoin price</th>
-          <td>{{ btcusdprice?.rate | number }} USD</td>
+          <td>{{ btcusdprice }} USD</td>
         </tr>
         <tr>
           <th scope="row"></th>
-          <td>{{ btcethprice?.rate | number }} ETH</td>
+          <td>{{ btceurprice }} EUR</td>
         </tr>
         <tr>
         <tr>
           <th scope="row"></th>
-          <td>{{ btcpmaprice?.rate | number }} PMA</td>
-        </tr>
-        <tr>
-        <tr>
-          <th scope="row">Last price update</th>
-          <td>{{ btcusdprice?.time | date:'long' }}</td>
+          <td>{{ btcjpyprice }} JPY</td>
         </tr>
         <tr>
           <th scope="row">Price source</th>
-          <td><a href="https://coinapi.io">CoinAPI</a></td>
+          <td><a href="https://www.blockchain.com">Blockchain.com</a></td>
         </tr>
         <tr>
           <th scope="row">Latest mined blocks</th>
           <td>
-            <a [routerLink]="['/blocks', general?.bestHeight]">
+            <a [routerLink]="['/blocks', general?.bestHeight]" target="_blank">
               {{general?.bestHeight}}
             </a>
-            <a [routerLink]="['/blocks', general?.bestHeight - 1]">
+            <a [routerLink]="['/blocks', general?.bestHeight - 1]" target="_blank">
               {{general?.bestHeight - 1}}
             </a>
-            <a [routerLink]="['/blocks', general?.bestHeight - 2]">
+            <a [routerLink]="['/blocks', general?.bestHeight - 2]" target="_blank">
               {{general?.bestHeight - 2}}
             </a>
-            <a [routerLink]="['/blocks', general?.bestHeight - 3]">
+            <a [routerLink]="['/blocks', general?.bestHeight - 3]" target="_blank">
               {{general?.bestHeight - 3}}
             </a>
-            <a [routerLink]="['/blocks', general?.bestHeight - 4]">
+            <a [routerLink]="['/blocks', general?.bestHeight - 4]" target="_blank">
               {{general?.bestHeight - 4}}
             </a>
           </td>

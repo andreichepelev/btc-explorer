@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs';
 export class HomepageComponent implements OnInit {
 
   btcusdprice: any;
-  btcethprice: any;
-  btcpmaprice: any;
+  btceurprice: any;
+  btcjpyprice: any;
   general: any;
 
   constructor(private exService: ExplorerService) {
@@ -22,12 +22,12 @@ export class HomepageComponent implements OnInit {
       this.btcusdprice = x;
     });
 
-    this.exService.fetchBtcEthPrice().subscribe((z) => {
-      this.btcethprice = z;
+    this.exService.fetchBtcEurPrice().subscribe((z) => {
+      this.btceurprice = z;
     });
 
-    this.exService.fetchBtcPmaPrice().subscribe((n) => {
-      this.btcpmaprice = n;
+    this.exService.fetchBtcJpyPrice().subscribe((n) => {
+      this.btcjpyprice = n;
     });
 
     this.exService.fetchGeneral().subscribe((y) => {
