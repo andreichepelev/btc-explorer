@@ -85,7 +85,7 @@ module.exports = "<footer class=\"text-muted\" style=\"margin-top: 15px; margin-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div style=\"background-color: #4D5EF2; padding: 20px; margin-bottom: 15px; margin-right:0px; margin-left:0px; margin-top:0px\">\n  <div class = \"container\">\n    <div class = \"row\">\n      <div class = \"col-md-4\" style = \"margin: 0.5em;\">\n         <a href=\"#\" style=\"color: #ffffff\">\n           <img src=\"/assets/images/logo.svg\" alt=\"PumaPay\">\n         </a>\n      </div>\n      <div class = \"col-md-6 col-sm-12\" style = \"margin: 0.5em;\">\n        <input\n        class=\"form-control\"\n        type=\"text\"\n        (keyup.enter)=\"OnInput($event)\"\n        placeholder=\"Search for block height, tx hash or address\"\n        >\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "\n<div style=\"background-color: #4D5EF2; padding: 20px; margin-bottom: 15px; margin-right:0px; margin-left:0px; margin-top:0px\">\n  <div class = \"container\">\n    <div class = \"row\">\n      <div class = \"col-md-4\" style = \"margin: 0.5em;\">\n         <a href=\"#\" style=\"color: #ffffff\">\n           <img src=\"../assets/images/logo.svg\" alt=\"PumaPay\">\n         </a>\n      </div>\n      <div class = \"col-md-6 col-sm-12\" style = \"margin: 0.5em;\">\n        <input\n        class=\"form-control\"\n        type=\"text\"\n        (keyup.enter)=\"OnInput($event)\"\n        placeholder=\"Search for block height, tx hash or address\"\n        >\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
