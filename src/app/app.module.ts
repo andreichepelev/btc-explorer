@@ -16,6 +16,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HomepageComponent } from './homepage/homepage.component';
 import {FormsModule} from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CustomizeComponent } from './customize/customize.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BlockHistoryComponent,
     AddressComponent,
     NotfoundComponent,
-    HomepageComponent
+    HomepageComponent,
+    CustomizeComponent
   ],
 
   imports: [
